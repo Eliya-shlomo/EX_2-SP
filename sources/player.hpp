@@ -6,16 +6,18 @@
 #define PROJECT1_PARTA_SEMESTERB_PLAYER_HPP
 
 #include <system_error>
+#include <iostream>
 #include <string>
-using namespace std;
 #include "vector"
 #include "card.hpp"
-
-
 using namespace std;
+using namespace std;
+
 namespace ariel {
     class Player {
         string name;
+    private:
+        vector<card> package;
 
     public:
         Player(string name);
@@ -24,6 +26,10 @@ namespace ariel {
         int stacksize();
 
         int cardesTaken();
+
+        vector<card> get_package();
+
+        string get_name();
     };
 }
 

@@ -5,7 +5,17 @@
 #include "card.hpp"
 using namespace std;
 using namespace ariel;
+using std::string;
 
-card::card(){
-   
+card::card(int number,string shape){
+   this->number=number;
+   this->shape=shape;
+}
+
+int card:: get_value() {
+    return this->number;
+}
+string card::to_string() {
+    string to_return= this->number+","+ this->shape;
+    return to_return;
 }

@@ -3,8 +3,6 @@
 //
 
 #include "player.hpp"
-
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,13 +10,21 @@ using namespace ariel;
 
 Player::Player(string name)  {
     this->name=name;
-
+    this->package=package;
 }
 Player::Player() {
 }
 int Player::stacksize() {
-    return 0;
+    return package.size();
 }
 int Player::cardesTaken() {
     return 0;
 }
+
+vector<card> Player:: get_package(){
+    return this->package;
+}
+string Player:: get_name(){
+    return this->name;
+}
+

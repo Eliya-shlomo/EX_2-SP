@@ -5,12 +5,22 @@
 #ifndef PROJECT1_PARTA_SEMESTERB_CARD_HPP
 #define PROJECT1_PARTA_SEMESTERB_CARD_HPP
 #include <string>
+#include <iostream>
+using std::string;
+
 namespace ariel {
     class card {
+    private:
+        int number;
+        string shape;
+
 
 
     public:
-        card();
+        card(int number,string shape);
+
+        int get_value();
+        string to_string();
     };
 }
 

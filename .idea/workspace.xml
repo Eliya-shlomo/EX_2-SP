@@ -20,7 +20,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7ccbbb-6346-4c84-ba57-cfbdb1c1b53d" name="Changes" comment="" />
+    <list default="true" id="1c7ccbbb-6346-4c84-ba57-cfbdb1c1b53d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/objects/file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/card.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/card.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/card.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/card.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/game.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/game.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/player.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/player.hpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,12 +49,16 @@
     <option name="minorVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NvBmCnWm0DfqQH3WdfxXoWz7aR" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -60,11 +74,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="project1_partA_semesterB" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project1_partA_semesterB" TARGET_NAME="project1_partA_semesterB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project1_partA_semesterB" RUN_TARGET_NAME="project1_partA_semesterB">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -80,7 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1680534837049</updated>
       <workItem from="1680534839421" duration="3371000" />
-      <workItem from="1680541085687" duration="6896000" />
+      <workItem from="1680541085687" duration="20993000" />
+      <workItem from="1680611658956" duration="12237000" />
     </task>
     <servers />
   </component>
@@ -92,5 +102,16 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
