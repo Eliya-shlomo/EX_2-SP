@@ -3,4 +3,4 @@ project(project1_partA_semesterB)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(project1_partA_semesterB grade grade_utils .gitignore cmake-build-debug TestCounter.cpp doctest.h Demo.cpp sources)
+add_executable(project1_partA_semesterB grade grade_utils .gitignore cmake-build-debug TestRunner.cpp doctest.h Demo.cpp sources)

@@ -18,6 +18,7 @@ namespace ariel {
         string name;
     private:
         vector<card> package;
+        int card_won;
 
     public:
         Player(string name);
@@ -29,7 +30,15 @@ namespace ariel {
 
         vector<card> get_package();
 
+        void add_to_package(card card);
+
+        void pop_from_package();
+
+        card showing_card_package();
+
         string get_name();
+        void count_cards(int cards_won);
+
     };
 }
 
