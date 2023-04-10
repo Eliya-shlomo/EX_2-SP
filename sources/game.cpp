@@ -57,8 +57,8 @@ void Game::playTurn() {
             this->drew+=1;
             player_1.count_cards(cards_to_win/2);
             player_2.count_cards(cards_to_win/2);
-            this->victory=""+player_1.get_name()+"played "+to_string(card_1.get_value())+" of "+card_1.to_string()+" "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of"+player_2.get_name()+"."
-            +" drew,end of cards."+"\n";
+            this->victory=""+bonus+player_1.get_name()+" played "+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+
+            " drew,end of cards.""\n";
             total_viictory+=victory;
             cards1_won+=card_1.to_string();
             cards2_won+=card_2.to_string();
@@ -70,21 +70,23 @@ void Game::playTurn() {
             cards_to_win+=2;
             card bonus_1 =player_1.showing_card_package();
             card bonus_2=player_2.showing_card_package();
-            bonus=""+player_1.get_name()+"played "+to_string(bonus_1.get_value())+" of "+bonus_1.to_string()+" "+player_2.get_name()+" played "+to_string(bonus_2.get_value())+" of"+player_2.get_name()+"."+"\n"
-                          +" flipped cards.";
+            bonus=""+this->victory=""+bonus+player_1.get_name()+" played "+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+" ,its a drew. ""+""\n"+
+            " flipped cards.";
             this->total_viictory+=bonus;
         }
         else if((card_1.get_value()==1&&card_2.get_value()!=2)||card_1.get_value()>card_2.get_value()){
             condition=0;
             player_1.count_cards(cards_to_win);
-            this->victory=""+bonus+player_1.get_name()+"played "+to_string(card_1.get_value())+" of "+card_1.to_string()+" "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of"+player_2.get_name()+"."+player_1.get_name()+" wins"+"\n";
+            this->victory=""+bonus+player_1.get_name()+" played "+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+player_1.get_name()+" wins"+"\n";
             this->total_viictory+=victory;
+            cards1_won+=""+bonus+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+""+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+"\n";
         }
         else{
             condition=0;
             player_2.count_cards(cards_to_win);
-            this->victory=""+bonus+player_2.get_name()+"played "+to_string(card_2.get_value())+" of "+card_2.to_string()+" "+player_1.get_name()+" played "+to_string(card_1.get_value())+" of"+player_1.get_name()+"."+player_2.get_name()+" wins"+"\n";
+            this->victory=""+bonus+player_2.get_name()+" played "+ to_string(card_2.get_value())+" of "+card_2.to_string() +". "+player_1.get_name()+" played "+to_string(card_1.get_value())+" of "+card_1.to_string()+". "+player_2.get_name()+" wins"+"\n";
             this->total_viictory+=victory;
+            cards2_won+=""+bonus+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+""+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+"\n";
         }
 
     }
@@ -94,7 +96,7 @@ void Game::playTurn() {
 }
 
 void Game::printLastTurn() {
-    std::cout << victory <<endl;
+    std::cout << "\n"+victory <<endl;
 }
 
 void  Game::playAll() {
@@ -107,16 +109,14 @@ void Game::printWiner() {
     if(player_1.stacksize()>0){
         std::cout <<  "the game is still being played" <<endl;
     }
-    else{
-        if(player_1.cardesTaken()>player_2.cardesTaken()){
+    else if(player_1.cardesTaken()>player_2.cardesTaken()){
             std::cout <<  player_1.get_name() <<endl;
         }
-        if(cardtaken_2>cardtaken_1){
+    else if(player_2.cardesTaken()>player_1.cardesTaken()){
             std::cout <<  player_2.get_name() <<endl;
         }
-        if(cardtaken_1==cardtaken_2){
-            std::cout << "its a drew "<<endl;
-        }
+    else{
+             std::cout <<  "its a drew." <<endl;
     }
 }
 
@@ -125,8 +125,8 @@ void Game::printLog() {
 }
 
 void Game::printStats() {
-    std::cout<<""+player_1.get_name()+ " win rate: "+to_string(player_1.cardesTaken()/26*100)+"\n"+cards1_won+"\n"+
-    player_2.get_name()+" win rate: "+  to_string(player_2.cardesTaken()/26*100)+"\n"+cards2_won+"\n"+"drew rate: "+ to_string(drew/26*100)<<endl;
+    std::cout<<""+player_1.get_name()+ " win rate: "+ to_string(player_1.cardesTaken())+" in "+ to_string(this->rounds)+" rounds\n"+to_string(((double)player_1.cardesTaken()/52)*100)+"\n"+cards1_won+"\n"+
+    player_2.get_name()+" win rate: "+  to_string((player_2.cardesTaken()))+" in "+ to_string(this->rounds)+" rounds\n"+to_string(((double)player_2.cardesTaken()/52)*100)+"\n"+cards2_won+"\n"+"drew rate: "+ to_string(((double)drew/26)*100)<<endl;
 }
 
 vector<card> Game::full_pacage() {
@@ -149,11 +149,6 @@ vector<card> Game::full_pacage() {
     return pacage;
 }
 
-//cardtaken_1+=2;
-//this->victory=""+player_1.get_name()+"played "+to_string(card_player1.get_value())+" of "+card_player1.to_string()+" "+player_2.get_name()+" played "+to_string(card_player2.get_value())+" of"+player_2.get_name()+"."
-//              +player_1.get_name()+" wins";
-//total_viictory+=victory;
-//cards1_won+=card_player1.to_string()+" "+card_player2.to_string();
 
 
 

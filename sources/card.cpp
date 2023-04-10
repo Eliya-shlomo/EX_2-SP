@@ -16,6 +16,7 @@ int card:: get_value() {
     return this->number;
 }
 string card::to_string() {
-    string to_return= std::to_string(this->number)+","+ this->shape;
-    return to_return;
+//    string to_return= std::to_string(this->number)+","+ this->shape;
+//    return to_return;
+return this->shape;
 }
