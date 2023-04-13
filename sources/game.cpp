@@ -69,6 +69,17 @@ void Game::playTurn() {
             cards2_won+=card_2.to_string();
             break;
         }
+        else if((card_1.get_value()==card_2.get_value())&&player_1.stacksize()==1){
+            this->drew+=1;
+            cards_to_win+=2;
+            player_1.count_cards(cards_to_win/2);
+            player_2.count_cards(cards_to_win/2);
+            card bonus_1 =player_1.showing_card_package();
+            card bonus_2=player_2.showing_card_package();
+            bonus=""+this->victory=""+bonus+player_1.get_name()+" played "+ to_string(card_1.get_value())+" of "+card_1.to_string() +". "+player_2.get_name()+" played "+to_string(card_2.get_value())+" of "+card_2.to_string()+". "+" ,its a drew. ""+""\n"+
+                                   " flipped cards.";
+            this->total_viictory+=bonus;
+        }
         else if((card_1.get_value()==card_2.get_value())&&player_1.stacksize()>0) {
             this->drew+=1;
             condition = 1;
@@ -138,8 +149,7 @@ void Game::printStats() {
 
 
 vector<card> Game::full_pacage() {
-    std::random_device rd;
-    std::mt19937 g(rd());
+
 
     vector<card>pacage;
     for(int i=1;i<53;i++){
@@ -156,6 +166,7 @@ vector<card> Game::full_pacage() {
             pacage.push_back(card(i-39,"leaf"));
         }
     }
+    srand(time(NULL));
     random_shuffle(pacage.begin(), pacage.end());
     return pacage;
 }
