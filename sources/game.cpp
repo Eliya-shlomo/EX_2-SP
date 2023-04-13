@@ -8,8 +8,13 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <ctime>
+#include <bits/stdc++.h>
 using namespace std;
 using namespace ariel;
+
+
+
 
 
 Game::Game(Player &player1, Player &player2):
@@ -129,7 +134,13 @@ void Game::printStats() {
     player_2.get_name()+" win rate: "+  to_string((player_2.cardesTaken()))+" in "+ to_string(this->rounds)+" rounds\n"+to_string(((double)player_2.cardesTaken()/52)*100)+"\n"+cards2_won+"\n"+"drew rate: "+ to_string(((double)drew/26)*100)<<endl;
 }
 
+
+
+
 vector<card> Game::full_pacage() {
+    std::random_device rd;
+    std::mt19937 g(rd());
+
     vector<card>pacage;
     for(int i=1;i<53;i++){
         if(i>0&&i<=13){
